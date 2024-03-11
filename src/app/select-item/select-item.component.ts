@@ -21,7 +21,7 @@ export class SelectItemComponent implements OnInit {
   @ViewChild(NgSelectComponent)
   set panelId(v: NgSelectComponent) {
     this.dropdownId = v.dropdownId;
-    console.log("Dropdown ID set:", this.dropdownId);
+
   }
 
   ngOnInit() {
@@ -32,22 +32,20 @@ export class SelectItemComponent implements OnInit {
    * Dropdown dragger mousedown event.
    */
   dragDropdown() {
-    console.log("Dragging dropdown...");
+
     this.panel = this.elRef.nativeElement.querySelector(`#${this.dropdownId}`);
-    console.log("Panel:", this.panel);
+
     if (!this.panelWidth && !this.panelHeight) {
       this.panelWidth = this.panel.clientWidth;
       this.panelHeight = this.panel.clientHeight;
-      console.log("Panel width:", this.panelWidth);
-      console.log("Panel height:", this.panelHeight);
+
       this.panel.style.width = this.panelWidth;
       this.panel.style.height = this.panelHeight;
     }
     const rect = this.panel.getBoundingClientRect();
     this.panelX = rect.x;
     this.panelY = rect.y;
-    console.log("Panel X:", this.panelX);
-    console.log("Panel Y:", this.panelY);
+
     this.draggingCorner = true;
   }
 
@@ -57,7 +55,7 @@ export class SelectItemComponent implements OnInit {
    */
   @HostListener('document:mousemove', ['$event'])
   onCornerMove(event: MouseEvent) {
-    console.log("Mouse move event detected...");
+
     if (!this.draggingCorner) {
       return;
     }
@@ -84,7 +82,6 @@ export class SelectItemComponent implements OnInit {
    */
   @HostListener('document:mouseup', ['$event'])
   onCornerRelease(event: MouseEvent) {
-    console.log("Mouse up event detected...");
     this.draggingCorner = false;
   }
 }
