@@ -1,10 +1,17 @@
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { NgSelectComponent } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-select-item',
   templateUrl: './select-item.component.html',
-  styleUrls: ['./select-item.component.css']
+  styleUrls: ['./select-item.component.css'],
 })
 export class SelectItemComponent implements OnInit {
   @Input() data: any;
@@ -16,23 +23,19 @@ export class SelectItemComponent implements OnInit {
   panelX = 0;
   panelY = 0;
   draggingCorner = false;
-  constructor(private elRef: ElementRef) { }
+  constructor(private elRef: ElementRef) {}
 
   @ViewChild(NgSelectComponent)
   set panelId(v: NgSelectComponent) {
     this.dropdownId = v.dropdownId;
-
   }
 
-  ngOnInit() {
-  
-  }
+  ngOnInit() {}
 
   /**
    * Dropdown dragger mousedown event.
    */
   dragDropdown() {
-
     this.panel = this.elRef.nativeElement.querySelector(`#${this.dropdownId}`);
 
     if (!this.panelWidth && !this.panelHeight) {
@@ -55,7 +58,6 @@ export class SelectItemComponent implements OnInit {
    */
   @HostListener('document:mousemove', ['$event'])
   onCornerMove(event: MouseEvent) {
-
     if (!this.draggingCorner) {
       return;
     }
@@ -63,7 +65,10 @@ export class SelectItemComponent implements OnInit {
     const offsetX = event.clientX - this.panelX;
     const offsetY = event.clientY - this.panelY;
 
-    if (!this.panel.classList.contains('resized') && this.panelHeight < offsetY) {
+    if (
+      !this.panel.classList.contains('resized') &&
+      this.panelHeight < offsetY
+    ) {
       this.panel.classList.add('resized');
     }
 

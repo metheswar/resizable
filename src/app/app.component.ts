@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'app';
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       { id: 17, name: 'David' },
       { id: 18, name: 'Mia' },
       { id: 19, name: 'Joseph' },
-      { id: 20, name: 'Ella' }
+      { id: 20, name: 'Ella' },
     ];
   }
 }

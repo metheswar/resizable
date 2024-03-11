@@ -6,21 +6,10 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { SelectItemComponent } from './select-item/select-item.component';
 import { SelectListsComponent } from './select-lists/select-lists.component';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    SelectItemComponent,
-    SelectListsComponent,
-
-
-  ],
-  imports: [
-    BrowserModule,
-    NgSelectModule
-  ],
+  declarations: [AppComponent, SelectItemComponent, SelectListsComponent],
+  imports: [BrowserModule, NgSelectModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

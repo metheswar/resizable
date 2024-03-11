@@ -1,7 +1,10 @@
-<ng-select [items]="data"
-           bindLabel="name"
-           bindValue="id"
-           placeholder="select">
+<ng-select
+  [items]="data"
+  bindLabel="name"
+  bindValue="id"
+  placeholder="select"
+  [multiple]="true"
+>
   <ng-template ng-option-tmp let-item="item" let-index="index">
     <div class="option-template">
       <img [src]="item.picture" />
