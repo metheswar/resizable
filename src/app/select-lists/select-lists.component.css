@@ -1,0 +1,15 @@
+.wrapper {
+    border: 1px solid #eeeeee;
+    padding: 30px;
+}
+
+.dropdown-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 30px;
+}
+
+h3 {
+    font-family: Helvetica, sans-serif;
+    margin-top: 0;
+}

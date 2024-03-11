@@ -1,0 +1,14 @@
+<ng-select [items]="data"
+           bindLabel="name"
+           bindValue="id"
+           placeholder="select">
+  <ng-template ng-option-tmp let-item="item" let-index="index">
+    <div class="option-template">
+      <img [src]="item.picture" />
+      <h4>{{ item.name }}</h4>
+    </div>
+  </ng-template>
+  <ng-template ng-footer-tmp>
+    <a (mousedown)="dragDropdown()" class="dropdown-opener"></a>
+  </ng-template>
+</ng-select>

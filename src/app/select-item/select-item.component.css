@@ -1,0 +1,46 @@
+h4 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+::ng-deep .ng-option {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.option-template {
+    align-items: center;
+    display: flex;
+}
+
+img {
+    margin-right: 10px;
+}
+
+::ng-deep .ng-value {
+    font-family: Helvetica, sans-serif;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-footer {
+    border: 0 none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+}
+
+.dropdown-opener {
+    cursor: nwse-resize;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent red transparent;
+}
+
+::ng-deep .ng-dropdown-panel.resized .scroll-host.ng-dropdown-panel-items {
+    max-height: 100%;
+}
