@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  data: any;
+  data: { id: number; name: string; }[] = [];
+
 
   ngOnInit() {
     this.data = [
@@ -32,5 +33,16 @@ export class AppComponent implements OnInit {
       { id: 19, name: 'Joseph' },
       { id: 20, name: 'Ella' },
     ];
+
+    
+    this.sortDataByName();
+  }
+
+  sortDataByName() {
+    this.data.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
   }
 }
